@@ -1,0 +1,32 @@
+<div>
+  <div class="row column">
+    <br />
+    <div>
+      <h5>Add A Note</h5>
+      <form class="form-group well" #formData="ngForm" (ngSubmit)="addNotes(formData)">
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Note Text
+              <input type="text" class="form-control" name="seatchStr" (ngModel)="seatchStr" placeholder="Enter Text..." />
+            </label>
+            <button class="button">Add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="off-canvas-content" data-off-canvas-content>
+    <div class="row small-up-2 medium-up-3 large-up-4">
+      <div class="column" *ngFor="let note of noteList">
+        <div class="note" (dblclick)="removeNote(note._id)">
+          <p>{{note.text}}</p>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
